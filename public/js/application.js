@@ -1,7 +1,39 @@
-$(document).ready(function() {
-  // This is called after the document has loaded in its entirety
-  // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
 
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
-});
+
+setUpBoard(
+  buildBoard();
+);
+
+while(gameOver = false){
+  yourTurn(
+
+    submitMove();
+  );
+
+  opponentsTurn(function(){
+    setInterval(function(){
+      $.ajax({
+      })
+        .done(function(){
+          buildBoard()
+
+        })
+        .fail(function(){
+
+        })
+        .always(function(){
+
+        })
+
+
+    }, 2000);
+
+  })
+
+}
+
+
+
+
+
+

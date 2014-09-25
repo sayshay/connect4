@@ -1,0 +1,18 @@
+.board, .column  {
+  display: flex;
+  border: solid 2px black;
+}
+.column {
+  flex-direction: column;
+}
+
+.board {
+  background-color: yellow;
+}
+.player-one-pieces {
+  background-color: red;
+}
+.player-two-pieces {
+  background-color: black;
+}
+
