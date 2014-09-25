@@ -1,5 +1,4 @@
 get '/' do
-
   erb :index
 end
 
@@ -22,4 +21,5 @@ end
 def set_peice
   peice_container = ["1","2"]
   peice_index = 0
+
 end
