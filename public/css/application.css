@@ -1,0 +1,52 @@
+html, body {
+  height: 100%;
+  width: 100%;
+}
+.container {
+  height: 100%;
+  width: 100%;
+  background-color: blue;
+}
+
+#board {
+  height: 90%;
+  width: 90%;
+  background-color: yellow;
+}
+
+
+#board, .column  {
+  display: flex;
+
+  justify-content: space-around;
+
+  border: solid 2px black;
+  margin: auto;
+}
+
+.column {
+  flex-direction: column;
+  height: 90%;
+  width: 12%;
+}
+
+
+.spot, .empty-spot, .player-one-pieces, .player-two-pieces {
+  border-radius: 50%;
+  border: solid 1px black;
+  height: 15%;
+  width: 90%;
+  margin: auto;
+}
+
+
+.empty-spot {
+  background-color: black
+}
+.player-one-pieces {
+  background-color: red;
+}
+.player-two-pieces {
+  background-color: black;
+}
+
