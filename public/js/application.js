@@ -24,7 +24,7 @@ $('.column').on('click', function(){
       var winner
       serverData.winner == 1 ? winner = 'Red' : winner = 'Black'
 
-      alert('the winner is ' + winner)
+      $('h1').text('the winner is ' + winner)
 
     }
 
@@ -35,31 +35,33 @@ $('.column').on('click', function(){
 })
 
 
-setInterval(function(){
-  $.ajax({
-    type: 'get',
-    url '/refresh'
-  }).done(
-    boardState = boardPrepare(serverData.board)
-    displayBoard(boardState);
-  )
+// setInterval(function(){
+//   $.ajax({
+//     type: 'get',
+//     url: '/refresh'
+//   }).done(function(serverData){
+//     boardState = boardPrepare(serverData.board)
+//     displayBoard(boardState);
+//   })
 
-}, 3000);
-
+// }, 3000);
 
 
 $('.reset-button').on('click', function(){
+
   $.ajax({
     type: 'post',
     url: '/reset',
     dataType: 'json',
     data: {reset: 'Do it!'}
-  }).done(
+  }).done(function(serverData){
     boardState = boardPrepare(serverData.board)
-    displayBoard(boardState);
-  )
-})
 
+    displayBoard(boardState);
+    location.reload();
+
+  })
+})
 
 
 
