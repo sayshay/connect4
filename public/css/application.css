@@ -46,8 +46,9 @@ header {
 
 
 .empty-spot {
-  background-color: pink;
-  border-color: pink;
+
+  background-color: blue;
+  border-color: blue;
 }
 .player-one-pieces {
   background-color: red;
