@@ -57,4 +57,13 @@ header {
   background-color: black;
   border-color: green;
 }
+.reset-button{
+  height: 5%;
+  width: 5%;
+  background-color: black;
+  color: white;
+}
+.reset-button:hover{
+  background-color: red;
 
+}

@@ -26,7 +26,21 @@ $('.column').on('click', function(){
 })
 
 
-var testBoard = ["012000", "012012","111111","000000","222222","121212","012012"]
+setInterval(function(){
+  alert("Hello")
+}, 3000);
+
+
+
+$('.reset-button').on('click', function(){
+
+})
+
+
+
+
+
+
 
 var boardPrepare = function(boardStringArray){
 
@@ -44,6 +58,7 @@ var boardPrepare = function(boardStringArray){
 
   return boardCharacterNestedArray
 }
-testBoard = boardPrepare(testBoard);
+// var testBoard = ["012000", "012012","111111","000000","222222","121212","012012"]
+// testBoard = boardPrepare(testBoard);
 
 
