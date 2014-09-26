@@ -5,11 +5,14 @@
 buildBoard();
 
 $('.column').on('click', function(){
-  console.log(this);
+
+  console.log($(this).attr('id'));
+
   $.ajax({
     type: 'post',
     url: '/move/:id',
     dataType: 'json',
+    data: {column: $(this).attr('id'), player: }
 
   }).done(function(serverData){
 
