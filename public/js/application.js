@@ -1,21 +1,47 @@
 
 
-setUpBoard(
-  buildBoard()
-);
+//remove this eventually
+buildBoard();
+displayBoard();
+
+// setUpBoard(){
+//   buildBoard();
+//   pickPlayerTurn();
+// }();
+
+playerTurn = 1;
+
+// while(gameOver = false){
+//   function Turn (){
+//     collectMove();
+//     function ajaxMagic(){
+
+      // sendAjaxRequest({player: 1, column: 0 });
 
 
-function player1Turn (){
-
-}
-
-function player2Turn (){
-
+//     }();
+//     switchPlayerTurn();
+//   }();
+// }
 
 
-}
+// var sendAjaxRequest = function(routeUrl){
+//   $.ajax({
+//   type: 'post',
+//   url: routeUrl.toString(),
+//   dataType: 'json',
 
-{player: 1, column: 0 }
+//   }).done(function(serverData){
+//     displayBoard(serverData.boardState);
+
+//   }).fail(function(){
+
+//   }).always(function(){
+
+//   });
+// };
+
+
 
 // while(gameOver = false){
 
