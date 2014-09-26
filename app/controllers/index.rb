@@ -11,11 +11,9 @@ post '/move' do
   column = Board.get_column(index)
   piece = Board.determine_turn
   Board.place_peice_in_column(column, piece)
-  answer2 = Board.check_diagonals
-  p answer2
-  answer = Board.check_row_winner || Board.check_column_winner
+  answer = Board.check_row_winner || Board.check_column_winner || Board.check_diagonals
   content_type :json
-  Board.all.sort.map{|column| column.column}.to_json
+  json = {board: Board.all.sort.map{|column| column.column},complete: answer, winner: piece}.to_json
 end
 
 get '/column/:id' do
