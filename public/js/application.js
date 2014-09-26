@@ -16,8 +16,17 @@ $('.column').on('click', function(){
 
   }).done(function(serverData){
 
+
     boardState = boardPrepare(serverData.board)
     displayBoard(boardState);
+
+    if (serverData.complete){
+      var winner
+      serverData.winner == 1 ? winner = 'Red' : winner = 'Black'
+
+      alert('the winner is ' + winner)
+
+    }
 
   }).always(function(){
 
@@ -27,13 +36,28 @@ $('.column').on('click', function(){
 
 
 setInterval(function(){
-  alert("Hello")
+  $.ajax({
+    type: 'get',
+    url '/refresh'
+  }).done(
+    boardState = boardPrepare(serverData.board)
+    displayBoard(boardState);
+  )
+
 }, 3000);
 
 
 
 $('.reset-button').on('click', function(){
-
+  $.ajax({
+    type: 'post',
+    url: '/reset',
+    dataType: 'json',
+    data: {reset: 'Do it!'}
+  }).done(
+    boardState = boardPrepare(serverData.board)
+    displayBoard(boardState);
+  )
 })
 
 
