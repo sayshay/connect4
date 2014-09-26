@@ -16,6 +16,13 @@ post '/move' do
   json = {board: Board.all.sort.map{|column| column.column},complete: answer, winner: piece}.to_json
 end
 
-get '/column/:id' do
-   p Board.find(params[:id])
+get '/refresh' do
+  json = {board: Board.all.sort.map{|column| column.column}}.to_json
+end
+
+
+get '/reset' do
+  `rake db:reset`
+  `rake db:seed`
+  json = {board: Board.all.sort.map{|column| column.column}.to_json
 end
