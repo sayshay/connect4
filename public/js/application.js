@@ -32,6 +32,7 @@ playerTurn = 1;
 //   dataType: 'json',
 
 //   }).done(function(serverData){
+
 //     displayBoard(serverData.boardState);
 
 //   }).fail(function(){
