@@ -1,1 +1,1 @@
-7.times {Board.create(column: '000012') }
+7.times {Board.create(column: '000000') }
