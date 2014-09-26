@@ -4,13 +4,18 @@ class Board < ActiveRecord::Base
   has_many :users, through: :games
 
 def self.get_column(column_id)
-  Board.find(column_id)
+   p Board.find(column_id)
+   Board.find(column_id)
 end
 
 def self.place_peice_in_column(column, piece)
+  p column.column
   piece_index = column.column.split("").count("0")
+
   array = column.column.split('')
-  array[piece_index-1] = piece
+
+  array[(piece_index-1)] = piece
+
   column.update(column: array.join(''))
 end
 
@@ -27,6 +32,7 @@ def self.determine_turn
   else
     whos_move = "2"
   end
+
   whos_move
 end
 end
