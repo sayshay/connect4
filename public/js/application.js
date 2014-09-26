@@ -1,8 +1,49 @@
 
 
+
 //remove this eventually
 buildBoard();
-displayBoard();
+
+$('.column').on('click', function(){
+  console.log(this);
+  $.ajax({
+    type: 'post',
+    url: '/move/:id',
+    dataType: 'json',
+
+  }).done(function(serverData){
+
+    boardState = boardPrepare(serverData)
+    displayBoard(boardState);
+
+  }).always(function(){
+
+  })
+
+})
+
+
+var testBoard = ["012000", "012012","111111","000000","222222","121212","012012"]
+
+var boardPrepare = function(boardStringArray){
+
+  boardCharacterNestedArray = $.map(boardStringArray, function(val, i){
+
+    var newColumn = []
+    var newAry = val.split('')
+
+    newAry.forEach(function(x){  x = parseInt(x) })
+
+    newColumn.push(newAry)
+
+    return newColumn
+  })
+
+  return boardCharacterNestedArray
+}
+testBoard = boardPrepare(testBoard);
+displayBoard(testBoard);
+console.log(testBoard)
 
 // setUpBoard(){
 //   buildBoard();
