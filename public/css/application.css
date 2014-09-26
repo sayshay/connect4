@@ -1,11 +1,13 @@
 html, body {
   height: 100%;
   width: 100%;
+  background-color: #4682B4;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
+
 .container {
   height: 100%;
   width: 100%;
-  background-color: blue;
 }
 
 header {
@@ -22,9 +24,7 @@ header {
 
 #board, .column  {
   display: flex;
-
   justify-content: space-around;
-
   border: solid 2px black;
   margin: auto;
 }
@@ -46,16 +46,12 @@ header {
 
 
 .empty-spot {
-
-  background-color: blue;
-  border-color: blue;
+  background-color: white;
 }
 .player-one-pieces {
   background-color: red;
-  border-color: red;
 }
 .player-two-pieces {
   background-color: black;
-  border-color: green;
 }
 
