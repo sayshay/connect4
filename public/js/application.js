@@ -16,7 +16,7 @@ $('.column').on('click', function(){
 
   }).done(function(serverData){
 
-    boardState = boardPrepare(serverData)
+    boardState = boardPrepare(serverData.board)
     displayBoard(boardState);
 
   }).always(function(){
