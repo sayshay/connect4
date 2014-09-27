@@ -54,4 +54,13 @@ header {
 .player-two-pieces {
   background-color: black;
 }
+.reset-button{
+  height: 5%;
+  width: 5%;
+  background-color: black;
+  color: white;
+}
+.reset-button:hover{
+  background-color: red;
 
+}

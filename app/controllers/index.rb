@@ -1,4 +1,4 @@
-get '/' do
+  get '/' do
   erb :index
 end
 
@@ -17,12 +17,12 @@ post '/move' do
 end
 
 get '/refresh' do
-  json = {board: Board.all.sort.map{|column| column.column}}.to_json
+  {  board: Board.all.sort.map{|column| column.column}  }.to_json
 end
 
 
-get '/reset' do
+post '/reset' do
   `rake db:reset`
   `rake db:seed`
-  json = {board: Board.all.sort.map{|column| column.column}.to_json
+  {  board:  Board.all.sort.map{|column| column.column}  }.to_json
 end
