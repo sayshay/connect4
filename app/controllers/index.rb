@@ -24,5 +24,7 @@ end
 get '/reset' do
   `rake db:reset`
   `rake db:seed`
-  json = {board: Board.all.sort.map{|column| column.column}.to_json
+  board = board.all
+  board.each do |
+  json = {board: Board.all.sort.map{|column| column.column}}.to_json
 end
